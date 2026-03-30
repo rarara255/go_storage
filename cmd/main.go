@@ -10,14 +10,16 @@ import(
 )
 
 func main(){
-	rep := storage.NewRepository[*models.Product]()
+	//rep := storage.NewRepository[*models.Product]()
 
-	fileNamePTR := flag.String("file", "data.txt", "")
+	fileNamePTR := flag.String("file", "data.txt", "Передайте адрес data файла")
 
 	flag.Parse()
 	// используется для того чтобы компилятор прочитал переданный флаг
 
 	currentFile := *fileNamePTR
+
+	var repos storage.ProductStorage = storage.NewStorage()
 
 	fmt.Printf("Система настроена на чтение из файла: %s", currentFile)
 	fmt.Printf("Чтение из файла (%s)", path)
