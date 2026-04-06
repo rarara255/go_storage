@@ -10,7 +10,7 @@ import(
 )
 
 func main(){
-	//rep := storage.NewRepository[*models.Product]()
+	// rep := storage.NewRepository[*models.Product]()
 
 	fileNamePTR := flag.String("file", "data.txt", "Передайте адрес data файла")
 
@@ -19,28 +19,25 @@ func main(){
 
 	currentFile := *fileNamePTR
 
-	var repos storage.ProductStorage = storage.NewStorage()
-
 	fmt.Printf("Система настроена на чтение из файла: %s", currentFile)
 	fmt.Printf("Чтение из файла (%s)", path)
 
-	Products, err := parser.ParseProductsFromFile(path)
+	var repos storage.productStorage = storage.
+	// if err != nil{
+	// 	log.Fatalf("Fatal Error: %v\n", err)
+	// }
 
-	if err != nil{
-		log.Fatalf("Fatal Error: %v\n", err)
-	}
+	// for _, product := range Products{
+	// 	rep.Add(product)
+	// }
 
-	for _, product := range Products{
-		rep.Add(product)
-	}
+	// items := rep.GetAll()
 
-	items := rep.GetAll()
+	// fmt.Printf("На склад отгружено %d товаров \n",len(items))
 
-	fmt.Printf("На склад отгружено %d товаров \n",len(items))
-
-	for _, item := range items{
-		fmt.Printf("-Name: %10s | SBIN: %20s | Годен до %s \n", item.Name, item.SBIN, item.DateToString())
-	}
+	// for _, item := range items{
+	// 	fmt.Printf("-Name: %10s | SBIN: %20s | Годен до %s \n", item.Name, item.SBIN, item.DateToString())
+	// }
 
 	fmt.Scanln()
 }
