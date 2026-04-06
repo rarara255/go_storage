@@ -5,7 +5,7 @@ import(
 	"fmt"
 	"os"
 	"strings"
-	"productStorage/internal/models"
+	"go_storage/internal/models"
 )
 
 func ParseProductsFromFile(path string)([]*models.Product,error){

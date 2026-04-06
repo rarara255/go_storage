@@ -4,13 +4,11 @@ import (
 	"database/sql"
 	"fmt"
 	"log"
-	"productStorage/internal/models"
+	"go_storage/internal/models"
 	"time"
 
 	"github.com/jackc/pgx/v5"
 	"github.com/jackc/pgx/v5/stdlib"
-
-	"go_storage/internal/models"
 	"go_storage/internal/storage"
 )
 
